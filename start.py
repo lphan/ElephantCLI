@@ -74,45 +74,50 @@ if __name__ == '__main__':
     parser.add_argument("-s", "--show", action='store_true', help="List of all\
                         functional interfaces")
     parser.add_argument("-el", "--elephant", action='store_true',
-                        help="ElePhAnt interface")
-    parser.add_argument("-up", "--unifiedportal", action='store_true',
-                        help="Unified Portal interface")
+                        help="ElePhAnt Interface")
+    parser.add_argument("-te", "--testing", action='store_true',
+                        help="ElePhAnt Testing Interface")
+    # parser.add_argument("-up", "--unifiedportal", action='store_true',
+    #                     help="Unified Portal interface")
     args = parser.parse_args()
 
     if args.show:
         print "-------------- List of Built-in functions"
         print "ElePhAnt: ...."
         print "ElePhAnt: ...."
-        print "Unified Portal: get_task"
-        print "Unified Portal: get_all_tasks"
-        print "Unified Portal: get_job"
-        print "Unified Portal: get_all_jobs"
+        # print "Unified Portal: get_task"
+        # print "Unified Portal: get_all_tasks"
+        # print "Unified Portal: get_job"
+        # print "Unified Portal: get_all_jobs"
     elif args.elephant:
         print "-------------- ElePhAnt Interface"
         print "First test: automatically calling function conversion ..."
         elephant_cli_conversion()
-    elif args.unifiedportal:
-        if install_lib('task-sdk'):
-            print "Unified Portal interface"
-            tasks = ['get_task', 'get_all_tasks', 'get_job', 'get_all_jobs']
-            subcommand = raw_input('Input callable function:  ')
-            if subcommand in tasks:
-                from up.query_up import parse_args as pa
-                if subcommand == 'get_task':
-                    pa(subcommand)
-                elif subcommand in tasks and subcommand == 'get_all_tasks':
-                    pa(subcommand)
-                elif subcommand in tasks and subcommand == 'get_job':
-                    pa(subcommand)
-                else:
-                    print "call get_all_jobs func"
-                    pa("get_all_jobs")
-            else:
-                print"No suitable function found, 'start.py -s' to get help"
-        else:
-            print "You need to install library task-sdk to use U.P. functions"
+    # elif args.unifiedportal:
+    #     if install_lib('task-sdk'):
+    #         print "Unified Portal interface"
+    #         tasks = ['get_task', 'get_all_tasks', 'get_job', 'get_all_jobs']
+    #         subcommand = raw_input('Input callable function:  ')
+    #         if subcommand in tasks:
+    #             from up.query_up import parse_args as pa
+    #             if subcommand == 'get_task':
+    #                 pa(subcommand)
+    #             elif subcommand in tasks and subcommand == 'get_all_tasks':
+    #                 pa(subcommand)
+    #             elif subcommand in tasks and subcommand == 'get_job':
+    #                 pa(subcommand)
+    #             else:
+    #                 print "call get_all_jobs func"
+    #                 pa("get_all_jobs")
+    #         else:
+    #             print"No suitable function found, 'start.py -s' to get help"
+    #     else:
+    #         print "You need to install library task-sdk to use U.P.functions"
+    elif args.testing:
+        print "------------- ElePhAnt Testing Interface"
+        print "Testing Correctness, Performance etc."
     else:
-        print "Input subcommand choices ['-s','-el','-up']"
+        print "Input subcommand choices ['-s', '-el']"
 
 # Feature: Support analysis data from datapath as input ................
     # if param.function == 'binarize':

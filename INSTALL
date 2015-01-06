@@ -12,10 +12,15 @@ virtualenv env_name
 # Step 2: download ElePhAnt from github or extract tar_ball
 git clone https://github.com/NeuralEnsemble/elephant.git
 
+
 # Step 3: run install.py to install the elephant's dependencies
 ./install.py
+
+    # (Optional): to replace/ update newer version of neo from github
+    git clone https://github.com/NeuralEnsemble/python-neo.git
+    python setup.py install 
 
 # Step 4: run setup.py to install ElePhAnt at location of library together with its libraries and create binary start_file at ./bin, create config-file, egg-files & run test-suite
 python setup.py install
 
-# NOTICE: If ElePhAnt already on pip, its part of step 4 can be integrated with step 3
+# NOTICE: as soon as ElePhAnt's available on PyPi, step 4 can be integrated with step 3
