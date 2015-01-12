@@ -5,13 +5,18 @@
 import subprocess
 import pip
 
+# TODO:
+# 1) Decision: what libaries to install
+# 2) Install: all libraries with "Y"
+#
 # --------------- should be in 1-Script ---------------
 # Script to check on the machine and install the software needed and
 # all necessary dependencies (libs) needed for ElePhAnt
 # Put all packages which will be installed into array
 # packages = ['git', 'python-virtualenv', 'python-pip', 'htop']
-libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo',
-        'pandas', 'nose', 'sphinx', 'numpydoc', 'task-sdk']
+libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo', 'pandas', 'nose',
+        'h5py', 'unittest2', 'sphinx', 'numpydoc', 'task-sdk', 'Cython',
+        'numexpr', 'tables']
 
 # print "------------------------------------------"
 # if raw_input("Check whether all packages are installed (Y/N)") is 'Y':
@@ -64,7 +69,11 @@ libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo',
 # ---------------- should be in 2-script ---------------
 # Try: setup-tools
 # search all installed packaged using pip
-if raw_input("Check all libraries at current environment (Y/N)") is 'Y':
+install_lib = []
+yes = ['Y', 'y', 'YES', 'yes']
+no = ['N', 'n', 'NO', 'no']
+
+if raw_input("Check all libraries at current environment (Y/N)") in yes:
     installed_listlib = sorted(["%s==%s" % (i.key, i.version) for i in
                                 pip.get_installed_distributions()])
     print installed_listlib
@@ -83,20 +92,16 @@ if raw_input("Check all libraries at current environment (Y/N)") is 'Y':
             print "... its version ", l[libs[i]]
         else:
             print "lib "+libs[i]+" not installed"
-            if libs[i] is 'task-sdk':
-                print "Install task-sdk need an access to VPN-EPFL"
-                if raw_input("you want to install it (Y/N)") is 'Y':
-                    # TODO: better way to install using pip install
-                    subprocess.call("pip install --index-url http://bbpsrv19.epfl.ch:9090/simple/ --pre "+libs[i], shell=True)
-                else:
-                    # task-sdk is not installed
-                    pass
-            else:
-                if raw_input("you want to install it (Y/N)") is 'Y':
-                    # prompt you want to install it (Y/N)
-                    subprocess.call("pip install "+libs[i], shell=True)
-                else:
-                    pass
+            if raw_input("you want to install (Y/N)") in yes:
+                # put libs[i] into other install_list
+                install_lib.append(libs[i])
+    for lib in install_lib:
+        if lib is 'task-sdk':
+            print "Install task-sdk need access to VPN-EPFL"
+            subprocess.call("pip install --index-url http://bbpsrv19.epfl.ch:9090/simple/ --pre "+lib, shell=True)
+        else:
+            subprocess.call("pip install "+lib, shell=True)
+
 else:
     pass
 
