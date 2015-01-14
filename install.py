@@ -15,7 +15,7 @@ import pip
 # Put all packages which will be installed into array
 # packages = ['git', 'python-virtualenv', 'python-pip', 'htop']
 libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo', 'pandas', 'nose',
-        'h5py', 'unittest2', 'sphinx', 'numpydoc', 'task-sdk', 'Cython',
+        'h5py', 'unittest2', 'sphinx', 'numpydoc', 'task-sdk', 'cython',
         'numexpr', 'tables']
 
 # print "------------------------------------------"
