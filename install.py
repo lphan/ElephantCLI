@@ -5,10 +5,6 @@
 import subprocess
 import pip
 
-# TODO:
-# 1) Decision: what libaries to install
-# 2) Install: all libraries with "Y"
-#
 # --------------- should be in 1-Script ---------------
 # Script to check on the machine and install the software needed and
 # all necessary dependencies (libs) needed for ElePhAnt
