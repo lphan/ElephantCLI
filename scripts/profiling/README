@@ -1,1 +1,1 @@
-This location has other optimized code beta-version of ElePhAnt functions which have been being optimized, profiled in pure-Python or Cython
+This location has some examples using line_profiler & other beta-optimized code version of ElePhAnt functions which have been being optimized, profiled in pure-Python or Cython
