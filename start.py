@@ -86,10 +86,10 @@ if __name__ == '__main__':
         print "Elephant: crosscorrelogram_task"
         print "Elephant: elephant_cv_task"
         print "Elephant: conversion"
-        print "Unified Portal: get_task"
-        print "Unified Portal: get_all_tasks"
-        print "Unified Portal: get_job"
-        print "Unified Portal: get_all_jobs"
+        # print "Unified Portal: get_task"
+        # print "Unified Portal: get_all_tasks"
+        # print "Unified Portal: get_job"
+        # print "Unified Portal: get_all_jobs"
     elif args.elephant:
         print "-------------- ElePhAnt Interface"
         # print "First test: automatically calling function conversion ..."
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     #         else:
     #             print"No suitable function found, 'start.py -s' to get help"
     #     else:
-    #         print "You need to install library task-sdk to use U.P. functions"
+    #         print "Need install library task-sdk to use U.P. functions"
     elif args.testing:
         # Run Testing Interface
         pass
