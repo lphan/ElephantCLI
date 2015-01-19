@@ -1,4 +1,4 @@
-# *********************************************************************
+# **********************************************************************
 #
 # This is ElePhAnt interface to bind with other ElePhAnt core functions
 # (core, analysis, test)
@@ -10,9 +10,10 @@ import neo
 import quantities as pq
 # import elephant as el
 from elephant_conversion import Elephant_sub as ElephantConv
-from elephant_neo_tools import Elephant_sub as ElephantNeoTools
-from elephant_pandas_bridge import Elephant_sub as ElephantPandas
-from elephant_statistic import Elephant_sub as ElephantStatistic
+# from elephant_neo_tools import Elephant_sub as ElephantNeoTools
+# from elephant_pandas_bridge import Elephant_sub as ElephantPandas
+# from elephant_statistic import Elephant_sub as ElephantStatistic
+from elephant_uptask import Elephant_sub as ElephantUp
 
 yes = set(['Yes', 'Y', 'YES', 'yes'])
 no = set(['No', 'N', 'NO', 'no'])
@@ -91,7 +92,6 @@ class Elephant_main(object):
     def start_elephant_conversion(t_spiketrain, value, sampling_rate=None,
                                   t_start=None, t_stop=None,
                                   return_times=None):
-
         """ get parameter from arguments and assign them to binarize function
         """
         v = Elephant_main._check_type_value(value)
@@ -113,3 +113,13 @@ class Elephant_main(object):
         """ get parameter from arguments and assign them to statistic function
         """
         pass
+
+    @staticmethod
+    def start_elephant_up_cc(inputdata, number_of_jobs, job_id):
+        # TODO: check all input parameters
+        ElephantUp.elephant_up_cc(inputdata, number_of_jobs, job_id)
+
+    @staticmethod
+    def start_elephant_up_cv():
+        # TODO: check all input parameters
+        ElephantUp.elephant_up_cv()

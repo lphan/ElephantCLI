@@ -75,24 +75,41 @@ if __name__ == '__main__':
                         functional interfaces")
     parser.add_argument("-el", "--elephant", action='store_true',
                         help="ElePhAnt Interface")
-    parser.add_argument("-te", "--testing", action='store_true',
-                        help="ElePhAnt Testing Interface")
     # parser.add_argument("-up", "--unifiedportal", action='store_true',
-    #                     help="Unified Portal interface")
+    #                     help="Unified Portal Interface")
+    parser.add_argument("-te", "--testing", action='store_true',
+                        help="Testing Interface")
     args = parser.parse_args()
 
     if args.show:
         print "-------------- List of Built-in functions"
-        print "ElePhAnt: ...."
-        print "ElePhAnt: ...."
-        # print "Unified Portal: get_task"
-        # print "Unified Portal: get_all_tasks"
-        # print "Unified Portal: get_job"
-        # print "Unified Portal: get_all_jobs"
+        print "Elephant: crosscorrelogram_task"
+        print "Elephant: elephant_cv_task"
+        print "Elephant: conversion"
+        print "Unified Portal: get_task"
+        print "Unified Portal: get_all_tasks"
+        print "Unified Portal: get_job"
+        print "Unified Portal: get_all_jobs"
     elif args.elephant:
         print "-------------- ElePhAnt Interface"
-        print "First test: automatically calling function conversion ..."
-        elephant_cli_conversion()
+        # print "First test: automatically calling function conversion ..."
+        elephant_func = ['conversion', 'crosscorrelogram_task',
+                         'elephant_cv_task']
+        subcommand = raw_input('Input callable function: ')
+        if subcommand in elephant_func:
+            print subcommand
+            if subcommand == 'conversion':
+                elephant_cli_conversion()
+            elif subcommand == 'crosscorrelogram_task':
+                # TODO: call crosscorrelogram & elephant_cv in up
+                inputdata = raw_input('Input path to Data: ')
+                number_of_jobs = raw_input('Input number of jobs [1,200) ')
+                job_id = raw_input('Input Job Id: ')
+                ie.Elephant_main.start_elephant_up_cc(inputdata,
+                                                      int(number_of_jobs),
+                                                      int(job_id))
+            elif subcommand == 'elephant_cv_task':
+                ie.Elephant_main.start_elephant_up_cv()
     # elif args.unifiedportal:
     #     if install_lib('task-sdk'):
     #         print "Unified Portal interface"
@@ -102,9 +119,9 @@ if __name__ == '__main__':
     #             from up.query_up import parse_args as pa
     #             if subcommand == 'get_task':
     #                 pa(subcommand)
-    #             elif subcommand in tasks and subcommand == 'get_all_tasks':
+    #             elif subcommand == 'get_all_tasks':
     #                 pa(subcommand)
-    #             elif subcommand in tasks and subcommand == 'get_job':
+    #             elif subcommand == 'get_job':
     #                 pa(subcommand)
     #             else:
     #                 print "call get_all_jobs func"
@@ -112,12 +129,12 @@ if __name__ == '__main__':
     #         else:
     #             print"No suitable function found, 'start.py -s' to get help"
     #     else:
-    #         print "You need to install library task-sdk to use U.P.functions"
+    #         print "You need to install library task-sdk to use U.P. functions"
     elif args.testing:
-        print "------------- ElePhAnt Testing Interface"
-        print "Testing Correctness, Performance etc."
+        # Run Testing Interface
+        pass
     else:
-        print "Input subcommand choices ['-s', '-el']"
+        print "Input subcommand choices ['-s','-el','-up', '-te']"
 
 # Feature: Support analysis data from datapath as input ................
     # if param.function == 'binarize':
