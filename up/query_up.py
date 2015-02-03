@@ -3,7 +3,7 @@
 from bbp_client.oidc.client import BBPOIDCClient
 from bbp_services.client import get_services, get_environments
 from bbp_client.client import Client
-
+import json
 
 user = ""
 
@@ -17,9 +17,18 @@ def parse_args(*args):
     # Authentication using oidc protocol
     if command == 'get_task':
         print "Calling get_task function ..."
-        print get_task_name(cl)
+        data = get_task_name(cl)
+        print data
+        # Write content of data to json-file
+        filename = 'logging/'+'task.json'
+        with open(filename, 'w') as outfile:
+            json.dump(data, outfile)
     elif command == 'get_all_tasks':
-        print get_all_tasks(cl)
+        data = get_all_tasks(cl)
+        print data
+        filename = 'logging/'+'alltask.json'
+        with open(filename, 'w') as outfile:
+            json.dump(data, outfile)
 
 
 def authenticate_oidc():
