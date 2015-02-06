@@ -1,6 +1,8 @@
 from elephant.neo_tools import (extract_neo_attrs, get_all_epochs,
                                 get_all_events, get_all_spiketrains)
 
+__author__ = 'lphan'
+
 
 class Elephant_sub(object):
     ''' Sub Interface to bind neo_tools function

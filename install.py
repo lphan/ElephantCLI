@@ -5,14 +5,20 @@
 import subprocess
 import pip
 
+__author__ = 'lphan'
+
+# TODO:
+# 1) Decision: what libaries to install
+# 2) Install: all libraries with "Y"
+#
 # --------------- should be in 1-Script ---------------
 # Script to check on the machine and install the software needed and
 # all necessary dependencies (libs) needed for ElePhAnt
 # Put all packages which will be installed into array
 # packages = ['git', 'python-virtualenv', 'python-pip', 'htop']
 libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo', 'pandas', 'nose',
-        'h5py', 'unittest2', 'sphinx', 'numpydoc', 'task-sdk', 'cython',
-        'numexpr', 'tables']
+        'h5py', 'sphinx', 'numpydoc', 'task-sdk', 'cython', 'numexpr',
+        'tables', 'matplotlib']
 
 # print "------------------------------------------"
 # if raw_input("Check whether all packages are installed (Y/N)") is 'Y':

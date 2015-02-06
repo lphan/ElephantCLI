@@ -18,7 +18,11 @@ from elephant_conversion import Elephant_sub as ElephantConv
 # from elephant_pandas_bridge import Elephant_sub as ElephantPandas
 # from elephant_statistic import Elephant_sub as ElephantStatistic
 from elephant_uptask import Elephant_sub as ElephantUp
+from elephant_testing import Elephant_sub as ElephantTest
+# from elephant_testing import Elephant_sub as ElephantTest
 
+
+__author__ = 'lphan'
 yes = ['Yes', 'Y', 'YES', 'yes', 'y']
 no = ['No', 'N', 'NO', 'no', 'n']
 
@@ -233,3 +237,7 @@ class Elephant_main(object):
     def start_elephant_up_cv():
         # TODO: check all input parameters
         ElephantUp.elephant_up_cv()
+
+    @staticmethod
+    def testing_module():
+        ElephantTest.test_elephant_module()

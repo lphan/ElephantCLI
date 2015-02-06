@@ -6,6 +6,8 @@ import json
 # import elephant as el
 import interface.elephant_main as ie
 
+
+__author__ = 'lphan'
 # ----------------------------------
 #
 #       Command Line Interface
@@ -132,7 +134,8 @@ if __name__ == '__main__':
             print "You need to install library task-sdk to use U.P. functions"
     elif args.testing:
         # Run Testing Interface
-        pass
+        print "Running Testing Elephant-Module"
+        ie.Elephant_main.testing_module()
     else:
         print "Input subcommand choices ['-s','-el','-up', '-te']"
 

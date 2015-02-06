@@ -1,5 +1,7 @@
 from elephant.statistics import (isi, mean_firing_rate, fanofactor)
 
+__author__ = 'lphan'
+
 
 class Elephant_sub(object):
     ''' Sub Interface to bind all function in statistic
