@@ -16,9 +16,7 @@ __author__ = 'lphan'
 # all necessary dependencies (libs) needed for ElePhAnt
 # Put all packages which will be installed into array
 # packages = ['git', 'python-virtualenv', 'python-pip', 'htop']
-libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo', 'pandas', 'nose',
-        'h5py', 'sphinx', 'numpydoc', 'task-sdk', 'cython', 'numexpr',
-        'tables', 'matplotlib']
+libs = ['pyinstaller', 'numpy', 'scipy', 'quantities', 'neo', 'pandas', 'nose', 'h5py', 'sphinx', 'numpydoc', 'task-sdk', 'cython', 'numexpr', 'tables', 'matplotlib']
 
 # print "------------------------------------------"
 # if raw_input("Check whether all packages are installed (Y/N)") is 'Y':
