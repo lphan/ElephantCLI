@@ -133,7 +133,7 @@ if __name__ == '__main__':
         print "Running Testing Elephant-Module"
         ie.Elephant_main.testing_module()
     else:
-        print "Input subcommand choices ['-s','-el','-up', '-te']"
+        print "Input subcommand choices ['-s','-el', '-te']"
 
 # Feature: Support analysis data from datapath as input ................
     # if param.function == 'binarize':
