@@ -27,6 +27,7 @@ cd elephant
 python setup.py install 
 
 # Step 4: Run Test per script start.py
+cd ElephantCLI
 ./start.py --test
 
 # NOTICE: as soon as all ElePhAnt and its dependencies available on PyPi, step 3 can be integrated with step 2 into one script install.py
