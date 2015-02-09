@@ -1,0 +1,6 @@
+This location has different logging-files:
+1. Install.log  # Information about installation of ElePhAnt
+2. Task.log     # Information about User-Task on Unified Portal
+3. Job.log      # Information about Job on Unified Portal
+4. Cache.log    # Information about Cache of last user-input (arguments)
+5. Result.log   # Information about result of last running-job (at local or on UP) 
