@@ -1,4 +1,4 @@
 ElephantCLI
 ===========
 
-Add interfaces for using ElePhAnt as CLI. ElePhAnt core functions is rooted at https://github.com/NeuralEnsemble/elephant
+Add Command Line Interface (CLI) for ElePhAnt. ElePhAnt core functions is rooted at https://github.com/NeuralEnsemble/elephant
