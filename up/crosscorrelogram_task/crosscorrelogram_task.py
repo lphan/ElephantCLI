@@ -5,12 +5,15 @@
 # =============================================================================
 
 from active_worker.task import task
-# from task_types import TaskTypes as tt
 import numpy as np
 import h5py
 
 num_surrs = 1
 
+# Author:
+#   https://github.com/paulchorley/elephant/blob/master/hbp_review/hbp_review_task_up.py
+# Editor:
+#   Long Phan
 
 @task
 def crosscorrelogram_task(inputdata, number_of_jobs, job_id):
