@@ -1,3 +1,4 @@
+ElephantCLI Command Line Interface for Elephant (Demo-Version)
 Copyright (c) 2014, Long Phan and Elephant authors and contributors
 
 This program is free software; you can redistribute it and/or
