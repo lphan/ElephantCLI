@@ -240,4 +240,6 @@ class Elephant_main(object):
 
     @staticmethod
     def testing_module():
+        # ElephantTest.test_elephant_module()
+        # ElephantTest.suite()
         ElephantTest.test_elephant_module()

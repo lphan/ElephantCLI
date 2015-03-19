@@ -14,10 +14,6 @@ __author__ = 'lphan'
 #
 # ----------------------------------
 
-# def elephant_cli(args):
-#     pass
-#
-#
 type_spiketrain = set(['numpy', 'quantities', 'neo'])
 data_type_elephant = []
 
@@ -108,29 +104,8 @@ if __name__ == '__main__':
                                                       int(job_id))
             elif subcommand == 'elephant_cv_task':
                 ie.Elephant_main.start_elephant_up_cv()
-    # elif args.unifiedportal:
-    #     if install_lib('task-sdk'):
-    #         print "Unified Portal interface"
-    #         tasks = ['get_task', 'get_all_tasks', 'get_job', 'get_all_jobs']
-    #         subcommand = raw_input('Input callable function:  ')
-    #         if subcommand in tasks:
-    #             from up.query_up import parse_args as pa
-    #             if subcommand == 'get_task':
-    #                 pa(subcommand)
-    #             elif subcommand == 'get_all_tasks':
-    #                 pa(subcommand)
-    #             elif subcommand == 'get_job':
-    #                 pa(subcommand)
-    #             else:
-    #                 print "call get_all_jobs func"
-    #                 pa("get_all_jobs")
-    #         else:
-    #             print"No suitable function found, 'start.py -s' to get help"
-    #     else:
-    #         print "Need install library task-sdk to use U.P. functions"
     elif args.testing:
         # Run Testing Interface
-        print "Running Testing Elephant-Module"
         ie.Elephant_main.testing_module()
     else:
         print "Input subcommand choices ['-s','-el', '-te']"
