@@ -18,7 +18,7 @@ git clone https://github.com/NeuralEnsemble/python-neo.git
 
 # Step 3: run install.py to install the elephant's dependencies
 cd ElephantCLI
-./install.py
+./install_dependencies.py
 
 cd python-neo
 python setup.py install
@@ -26,8 +26,9 @@ python setup.py install
 cd elephant
 python setup.py install 
 
-# Step 4: Run Test per script start.py
+# Step 4: Run Test suite via start script
+cd ElephantCLI
 ./start.py --test
 
-# NOTICE: as soon as all ElePhAnt and its dependencies available on PyPi, step 3 can be integrated with step 2 into one script install.py
+# NOTICE: as soon as all ElePhAnt and its dependencies available on PyPi, step 3 can be integrated with step 2 into one script install_dependencies.py and renamed into install.py
 
