@@ -1,5 +1,9 @@
-from elephant.conversion import binarize
-# import elephant.conversion as c
+try:
+    from elephant.conversion import binarize
+    # from elephant.conversion import binarize
+    # import elephant.conversion as ec
+except ImportError:
+    print "Error"
 
 
 __author__ = 'lphan'
