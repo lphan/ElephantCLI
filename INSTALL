@@ -11,6 +11,11 @@ virtualenv env_name
 cd env_name
 . bin/activate
 
+# (optional) for UBUNTU
+# for lxml installation: sudo apt-get install libxml2-dev, libxml2, python-dev
+# for h5py installation: sudo apt-get install -y zlib1g-dev, libhdf5-dev, libpng-dev, libjpeg8-dev, libfreetype6-dev
+# for scipy installation: sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran
+
 # Step 2: download ElePhAnt & ElephantCLI & NEO from github or extract tar_ball
 git clone https://github.com/NeuralEnsemble/elephant.git
 git clone https://github.com/lphan/ElephantCLI.git
